@@ -66,11 +66,17 @@ class AdminProductController extends Controller
             $objetives = Validate::text($_POST['objetives'] ?: 'Desde la nada al todo en PHP');
             $necesites = Validate::text($_POST['necesites'] ?: 'Ganas, muchas ganas');
 
+
             // Validamos la información
             if (empty($name)) {
                 array_push($errors, 'El nombre del producto es requerido');
             }
-            if (empty($description)) {
+            if (empty($description))
+            {
+                if ( strlen($description) > 30)
+                {
+                    $description = substr_replace($description, "...", 30);
+                }
                 array_push($errors, 'La descripción del producto es requerida');
             }
             if ( ! is_numeric($price)) {
