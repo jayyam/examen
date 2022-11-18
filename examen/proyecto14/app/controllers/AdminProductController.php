@@ -11,7 +11,7 @@ class AdminProductController extends Controller
 
     public function index()
     {
-        $session = new Session();
+        $session = new SessionAdmin();//cambiando session por session admin
 
         if ($session->getLogin()) {
 
