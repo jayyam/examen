@@ -72,6 +72,9 @@
                 <li class="nav-item">
                     <a href="<?= ROOT ?>adminproduct" class="nav-link">Productos</a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= ROOT ?>shop/logout" class="nav-link">Salir</a>
+                </li>
             </ul>
         <?php endif; ?>
     </div>
