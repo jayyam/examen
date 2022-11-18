@@ -33,8 +33,8 @@ class AdminUserController extends Controller
 
     public function create()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+        if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
             $errors = [];
 
             $name = $_POST['name'] ?? '';
@@ -47,6 +47,15 @@ class AdminUserController extends Controller
                 'email' => $email,
                 'password' => $password1,
             ];
+        }
+        else
+        {
+
+        }
+
+        public function store($dataForm)
+        {
+            $errors = [];
 
             if (empty($name)) {
                 array_push($errors, 'El nombre de usuario es requerido');
